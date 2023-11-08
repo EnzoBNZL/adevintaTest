@@ -14,7 +14,7 @@ import java.util.Optional;
 public class FirefighterService {
 
     private final FireFighterRepo firefighterRepository;
-    private final FireFighterDto fireFigterDto = new FireFighterDto();
+    private final FireFighterDto fireFighterDto = new FireFighterDto();
 
     @Autowired
     FirefighterService(FireFighterRepo firefighterRepo) {
@@ -22,11 +22,11 @@ public class FirefighterService {
     }
 
 
-    public FireFighterDto getNextFirefighter() {
+   /* public FireFighterDto getNextFirefighter() {
 
         List<FireFighter> firefighters = firefighterRepository.findAll();
         return firefighters.stream().findFirst();
-    }
+    }*/
 
     public FireFighterDto activationFireFighter(int id, Boolean activation) {
 
@@ -38,6 +38,6 @@ public class FirefighterService {
             fireFighter.setIsAvailable(false);
         }
 
-        return fireFigterDto.entityToDto(firefighterRepository.save(fireFighter));
+        return fireFighterDto.entityToDto(firefighterRepository.save(fireFighter));
     }
 }
